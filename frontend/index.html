@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting app</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+</head>
+<body>
+    <div id="connectMetamask">
+        <p id="connectWalletMessage">Please connect your wallet</p>
+        <button id="connectWallet">ConnectWallet</button>
+    </div>
+    <div id="votingStation">
+        <div id="timer">
+            <p id="timerMessage"><span id="time">123</span> seconds left</p>
+        </div>
+        <div id="mainBoard">
+            <table id="candidateBoard">
+                <tr>
+                    <th>ID No.</th>
+                    <th>Candidate</th>
+                </tr>
+
+                <tr>
+                    <td>0</td>
+                    <td>Candidate 0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Candidate 0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Candidate 0</td>
+                </tr>
+            </table>
+        </div>
+        <div id="voteForm">
+            <p>Please select the ID of the candidate you would like to vote</p>
+            <label>
+                <input type="number" id="vote">
+                <button id="sendVote">Send Vote</button>
+            </label>
+        </div>
+
+        <div id="showResultContainer">
+            <button id="showResult">Show Result</button>
+        </div>
+        
+        <div id="result">
+            <table id="resultBoard">
+                <tr>
+                    <th>ID No.</th>
+                    <th>Candidate</th>
+                    <th>Number of votes</th>
+                </tr>
+
+                <tr>
+                    <td>0</td>
+                    <td>Candidate 0</td>
+                    <td>vote count</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Candidate 0</td>
+                    <td>vote count</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Candidate 0</td>
+                    <td>vote count</td>
+                </tr>
+            </table>
+        </div>
+        <div id="admin">
+            <p id="adminHeading">admin only </p>
+            <div id="tools">
+                <div id="startElection">
+                    <p id="startElectionMessage">Start Election</p>
+                    <input type="text" id="candidates" placeholder="name seperated by comma">
+                    <input type="number" id="electionDuration" placeholder="duration in minutes">
+                    <button id="startAnElection">Start Election</button>
+                </div>
+                <div id="addCanidate">
+                    <p id="addCandidateMessage">Add a candidate</p>
+                    <input type="text" id="candidate" placeholder="candidate name">
+                    <button id="addTheCandidate">Add Candidate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" ></script>
+</body>
+</html>
