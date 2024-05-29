@@ -18,7 +18,7 @@ const candidate = document.querySelector('#candidate');
 const addTheCandidate = document.querySelector('#addTheCandidate');
 
 // configure ethers
-const contractAddres =  '0x790cb316A130B86A1D73AC46712556533B67F139';
+const contractAddres =  '0x8A02CEb409C9518D72F1F087057C2105ad59A73A';
 const contractABI = [
     {
       "inputs": [],
@@ -306,7 +306,7 @@ const contractABI = [
     for (let i = 0; i < candidates.length; i++) {
         
         let candidate = document.createElement("tr");
-        candidate.innerHTML = '<td>${parseInt(candidates[i][0])}</td><td>${candidates[i][1]}</td>';
+        candidate.innerHTML =  `<td>${parseInt(candidates[i][0])}</td><td>${candidates[i][1]}</td>`;
         board.appendChild(candidate);
     }
   }
@@ -331,7 +331,7 @@ const contractABI = [
     for (let i = 0; i < candidates.length; i++) {
         
         let candidate = document.createElement("tr");
-        candidate.innerHTML = '<td>${parseInt(candidates[i][0])}</td><td>${candidates[i][1]}</td><td>${parseInt(candidates[i][2])}</td>';
+        candidate.innerHTML = `<td>${parseInt(candidates[i][0])}</td><td>${candidates[i][1]}</td><td>${parseInt(candidates[i][2])}</td>`;
         resultBoard.appendChild(candidate);
     }
   }
@@ -342,7 +342,7 @@ const contractABI = [
         let time = await contract.electionTimer();
 
         if (time > 0) {
-            timerMessage.innerHTML = '<span id="time">${time}</span> second/s left.';
+            timerMessage.innerHTML = `<span id="time">${time}</span> second/s left.`;
             voteForm.computedStyleMap.display = 'flex';
             showResultContainer.computedStyleMap.display = 'none';
         }else{
