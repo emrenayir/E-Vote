@@ -279,7 +279,7 @@ const contractABI = [
   provider.send("eth_requestAccounts",[]).then(()=> {
     provider.listAccounts().then((accounts)=> {
         signer = provider.getSigner(accounts[0])
-        conntract = new ethers.Contract(contractAddres, contractABI, signer)
+        contract = new ethers.Contract(contractAddres, contractABI, signer)
     });
   })
 
@@ -415,7 +415,7 @@ const contractABI = [
 
         let time = await contract.electionTimer();
         if (time == 0) {
-            contract.checkElectionFailed();
+            contract.checkElectionPeriod();
         }
     }
 
